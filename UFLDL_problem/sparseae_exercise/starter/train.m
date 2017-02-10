@@ -33,7 +33,7 @@ patches = sampleIMAGES;
 display_network(patches(:,randi(size(patches,2),204,1)),8);
 fprintf('Program paused. Press enter to continue.\n');
 
-pause;
+%pause;
 
 %  Obtain random parameters theta
 theta = initializeParameters(hiddenSize, visibleSize);
@@ -70,7 +70,7 @@ theta = initializeParameters(hiddenSize, visibleSize);
                                      sparsityParam, beta, patches);
 fprintf('Program paused. Press enter to continue.\n');
 
-pause;
+%pause;
 %%======================================================================
 % %% STEP 3: Gradient Checking
 % %
@@ -125,7 +125,7 @@ options.display = 'on';
                                    beta, patches), ...
                               theta, options);
 fprintf('Program paused. Press enter to continue.\n');
-pause;
+%pause;
 %%======================================================================
 %% STEP 5: Visualization 
 
