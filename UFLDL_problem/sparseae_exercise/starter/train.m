@@ -66,7 +66,7 @@ theta = initializeParameters(hiddenSize, visibleSize);
 %  final submission of the visualized weights, please use parameters we 
 %  gave in Step 0 above.
 
-[cost, grad] = sparseAutoencoderCost1(theta, visibleSize, hiddenSize, lambda, ...
+[cost, grad] = sparseAutoencoderCost(theta, visibleSize, hiddenSize, lambda, ...
                                      sparsityParam, beta, patches);
 fprintf('Program paused. Press enter to continue.\n');
 
@@ -119,13 +119,13 @@ options.maxIter = 400;	  % Maximum number of iterations of L-BFGS to run
 options.display = 'on';
 
 
-[opttheta, cost] = minFunc( @(p) sparseAutoencoderCost1(p, ...
+[opttheta, cost] = minFunc( @(p) sparseAutoencoderCost(p, ...
                                    visibleSize, hiddenSize, ...
                                    lambda, sparsityParam, ...
                                    beta, patches), ...
                               theta, options);
 fprintf('Program paused. Press enter to continue.\n');
-%pause;
+pause;
 %%======================================================================
 %% STEP 5: Visualization 
 
